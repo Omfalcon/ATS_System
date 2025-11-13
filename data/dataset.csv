@@ -1,0 +1,398 @@
+resume_text,jd_text,label
+"Python developer with Flask and SQL experience","Looking for backend Python developer with Flask and database knowledge",1
+"Frontend React developer with HTML CSS JS","Hiring backend engineer skilled in Python and Django",0
+"Cybersecurity analyst with SIEM and vulnerability assessment","Looking for security expert with SIEM and threat detection skills",1
+"Graphic designer with Photoshop Illustrator","Hiring data analyst with SQL and Excel",0
+"Machine learning engineer with TensorFlow NLP and BERT","Looking for ML engineer familiar with TensorFlow and NLP models",1
+"Android developer skilled in Kotlin and Java","Hiring web developer with React and Node.js",0
+"Network engineer with Cisco firewall and router configuration","Looking for network security analyst",1
+"Data analyst with PowerBI and Excel","Hiring software developer with React and Node.js",0
+"Python Django REST API developer with PostgreSQL","Looking for Python backend developer with Django framework",1
+"React Native mobile developer with TypeScript","Hiring React Native developer for mobile app development",1
+"Java Spring Boot microservices developer","Looking for Java backend developer with Spring Boot",1
+"Frontend Angular developer with RxJS","Hiring React developer with JavaScript experience",0
+"Data Scientist with Python Scikit-learn TensorFlow","Looking for ML engineer with Python and Scikit-learn",1
+"DevOps engineer AWS Docker Kubernetes","Hiring cloud engineer with AWS and Docker skills",1
+"Full Stack MERN developer MongoDB Express React Node","Looking for full stack developer with MERN stack",1
+"Node.js backend developer with Express MongoDB","Hiring Node.js developer with Express framework",1
+"Python Flask developer with SQLAlchemy","Looking for Python backend developer with Flask",1
+"React developer with Redux Context API","Hiring frontend React developer with state management",1
+"Machine Learning Engineer PyTorch Computer Vision","Looking for AI engineer with PyTorch and computer vision",1
+"Cloud Engineer AWS Azure Google Cloud","Hiring multi-cloud engineer with AWS experience",1
+"Mobile Flutter developer with Dart","Looking for cross-platform mobile developer with Flutter",1
+"Data Engineer PySpark AWS Glue","Hiring big data engineer with PySpark and ETL",1
+"Frontend Vue.js developer JavaScript CSS","Looking for Vue.js developer with frontend skills",1
+"Backend Python FastAPI MongoDB","Hiring Python developer with FastAPI framework",1
+"Cybersecurity Penetration Testing Ethical Hacking","Looking for security engineer with penetration testing",1
+"Java developer with Spring Framework","Hiring Python Django developer for web applications",0
+"Frontend developer with jQuery Bootstrap","Looking for React developer with modern JavaScript",0
+"Data analyst with Excel PowerPoint","Hiring data scientist with Python machine learning",0
+"DevOps engineer with Jenkins CI/CD","Looking for cloud architect with AWS design",0
+"Backend PHP developer Laravel MySQL","Hiring Node.js developer with Express MongoDB",0
+"Full Stack JavaScript developer React Node","Looking for Python Django full stack developer",0
+"iOS developer Swift UIKit","Hiring Android developer with Kotlin",0
+"Machine Learning engineer with R programming","Looking for Python ML engineer with TensorFlow",0
+"Cloud architect with Azure services","Hiring AWS solutions architect",0
+"Mobile React Native developer with Expo","Looking for Flutter developer with Dart",0
+"Backend Go developer Gin PostgreSQL","Hiring Python Flask developer with SQL",0
+"Frontend React developer with Material-UI","Looking for Angular developer with TypeScript",0
+"Data Scientist with SAS SPSS","Hiring Python data scientist with Pandas",0
+"DevOps engineer with Ansible Terraform","Looking for Kubernetes administrator with Helm",0
+"Backend C# developer .NET Entity Framework","Hiring Java Spring Boot developer",0
+"Full Stack Python Django React developer","Looking for MERN stack developer",0
+"AI Engineer with NLP Transformers","Hiring computer vision engineer with OpenCV",0
+"Cloud security specialist AWS IAM","Looking for network security analyst",0
+"Mobile Android developer Kotlin Jetpack","Hiring iOS developer with Swift",0
+"Backend Scala developer Play Framework","Looking for Java Spring developer",0
+"Frontend Svelte developer JavaScript","Hiring React developer with TypeScript",0
+"Data Engineer SQL ETL Data Warehousing","Looking for big data engineer with Spark",1
+"Python developer with Pandas NumPy","Looking for data analyst with Python skills",1
+"React developer with Next.js framework","Hiring React developer with SSR experience",1
+"Backend Node.js developer TypeScript GraphQL","Looking for Node.js developer with TypeScript",1
+"DevOps engineer with Prometheus Grafana","Hiring monitoring and observability expert",1
+"Machine Learning engineer with Computer Vision","Looking for AI engineer with image processing",1
+"Cloud engineer with Kubernetes Docker","Hiring containerization expert",1
+"Mobile Flutter developer with Firebase","Looking for Flutter developer with backend integration",1
+"Frontend developer with Webpack Babel","Hiring build tools and optimization expert",1
+"Data Analyst with SQL Python","Looking for business analyst with data skills",1
+"Backend Python developer with Celery Redis","Hiring async task processing expert",1
+"Full Stack Vue.js Node.js MongoDB","Looking for Vue.js full stack developer",1
+"Cybersecurity analyst with Firewall VPN","Hiring network security specialist",1
+"DevOps engineer with Linux Bash","Looking for Linux administrator with scripting",1
+"Java developer with Hibernate JPA","Hiring Java backend developer with ORM",1
+"Frontend React developer with Testing Library","Looking for React developer with testing skills",1
+"Data Scientist with MATLAB programming","Hiring Python data scientist with NumPy",0
+"Cloud engineer with DigitalOcean","Looking for AWS cloud engineer",0
+"Mobile developer with Xamarin framework","Hiring React Native developer",0
+"Backend Perl developer Catalyst","Looking for Python Flask developer",0
+"Frontend Ember.js developer","Hiring React developer with hooks",0
+"DevOps engineer with Nagios monitoring","Looking for Prometheus Grafana expert",0
+"Machine Learning engineer with Azure ML","Hiring TensorFlow ML engineer",0
+"Full Stack ASP.NET MVC developer","Looking for Django full stack developer",0
+"Data Analyst with Business Intelligence","Hiring data engineer with ETL skills",0
+"Backend Rust developer Actix Web","Looking for Go developer with Gin",0
+"Frontend CSS Sass Bootstrap developer","Hiring Tailwind CSS expert",0
+"Cloud engineer with IBM Cloud","Looking for AWS specialist",0
+"Mobile developer with NativeScript","Hiring Flutter developer",0
+"DevOps engineer with Puppet configuration","Looking for Ansible automation expert",0
+"Backend Elixir developer Phoenix","Looking for Node.js developer",0
+"Data Engineer with Apache Kafka","Hiring real-time streaming expert",1
+"Python developer with Data Science background","Looking for ML engineer with Python",1
+"React developer with State Management","Hiring frontend developer with React skills",1
+"Backend developer with Microservices architecture","Looking for scalable system developer",1
+"Cloud engineer with Serverless computing","Hiring AWS Lambda expert",1
+"Mobile developer with Progressive Web Apps","Looking for cross-platform mobile developer",1
+"DevOps engineer with Infrastructure as Code","Hiring Terraform CloudFormation expert",1
+"Data Analyst with Visualization tools","Looking for Tableau PowerBI expert",1
+"Full Stack developer with TypeScript","Hiring TypeScript full stack developer",1
+"Cybersecurity expert with Threat Intelligence","Looking for security analyst with threat detection",1
+"Machine Learning engineer with AutoML","Hiring ML engineer with automation skills",1
+"Backend developer with GraphQL API","Looking for REST API developer",0
+"Frontend developer with Web Components","Hiring React component developer",0
+"Cloud engineer with Multi-cloud strategy","Looking for AWS specialist",0
+"Mobile developer with Game Development","Hiring business app developer",0
+"Data Engineer with Real-time processing","Looking for batch processing expert",0
+"DevOps engineer with GitLab CI/CD","Hiring Jenkins expert",0
+"Backend developer with ORM frameworks","Looking for raw SQL developer",0
+"Full Stack developer with Jamstack","Hiring traditional stack developer",0
+"AI engineer with Reinforcement Learning","Looking for supervised learning expert",0
+"Frontend developer with Accessibility focus","Hiring general frontend developer",0
+"Cloud security with Compliance standards","Looking for general security analyst",0
+"Python developer with Web Scraping","Looking for backend API developer",1
+"React developer with Performance optimization","Hiring React developer with best practices",1
+"Backend developer with Caching strategies","Looking for Redis Memcached expert",1
+"Data Scientist with Statistical analysis","Hiring ML engineer with deep learning",1
+"DevOps engineer with Container orchestration","Hiring Docker Swarm expert",0
+"Mobile developer with Offline capabilities","Looking for online-first app developer",0
+"Full Stack developer with SEO knowledge","Hiring backend-focused developer",0
+"Cybersecurity with Incident Response","Looking for preventive security",0
+"Machine Learning with Model Deployment","Hiring model training specialist",0
+"Cloud engineer with Cost Optimization","Looking for technical cloud architect",0
+"Backend developer with Message Queues","Hiring synchronous API developer",0
+"Frontend developer with Animation skills","Looking for functional UI developer",0
+"Data Engineer with Data Governance","Hiring data pipeline developer",0
+"Python developer with Automation scripts","Looking for web application developer",1
+"React developer with Internationalization","Hiring single-language app developer",0
+"Backend developer with Authentication systems","Looking for basic CRUD developer",0
+"DevOps engineer with Disaster Recovery","Hiring everyday operations expert",0
+"Mobile developer with Push Notifications","Looking for basic mobile app developer",0
+"Full Stack developer with Agile methodology","Hiring waterfall methodology developer",0
+"Cybersecurity with Security Audits","Looking for implementation specialist",0
+"Machine Learning with Feature Engineering","Hiring model tuning expert",0
+"Cloud engineer with Migration experience","Looking for greenfield project developer",0
+"Data Analyst with A/B Testing","Hiring descriptive analytics expert",0
+"Backend developer with WebSockets","Looking for REST API developer",1
+"Frontend developer with PWA experience","Hiring traditional web developer",0
+"Python developer with API Design","Looking for Python developer with API skills",1
+"React developer with Component Libraries","Hiring custom component developer",1
+"DevOps engineer with Monitoring alerts","Looking for infrastructure builder",0
+"Mobile developer with App Store deployment","Hiring development-focused developer",0
+"Full Stack developer with Code Review","Looking for independent developer",0
+"Cybersecurity with Vulnerability Management","Looking for penetration tester",1
+"Machine Learning with Data Preprocessing","Hiring model deployment specialist",0
+"Cloud engineer with Auto-scaling","Looking for fixed infrastructure",0
+"Data Engineer with Data Quality","Hiring data pipeline builder",1
+"Backend developer with Rate Limiting","Looking for basic API developer",0
+"Frontend developer with Design Systems","Hiring individual component developer",0
+"Python developer with Testing experience","Looking for Python developer with testing",1
+"React developer with Hook patterns","Hiring class component developer",0
+"DevOps engineer with Backup strategies","Looking for primary infrastructure",0
+"Mobile developer with Cross-platform","Looking for native developer",0
+"Full Stack developer with Documentation","Looking for code-focused developer",0
+"Cybersecurity with Security Training","Looking for technical security",0
+"Machine Learning with MLOps","Hiring research scientist",0
+"Cloud engineer with Networking","Looking for application developer",0
+"Data Analyst with Storytelling","Hiring technical analyst",0
+"Backend developer with Database optimization","Looking for basic CRUD developer",1
+"Frontend developer with Browser compatibility","Hiring modern browser developer",0
+"Python developer with Code quality","Looking for Python developer with clean code",1
+"React developer with State persistence","Hiring stateless component developer",0
+"DevOps engineer with Security scanning","Looking for infrastructure developer",0
+"Mobile developer with Performance tuning","Looking for functional app developer",0
+"Full Stack developer with Team leadership","Looking for individual contributor",0
+"Cybersecurity with Risk Assessment","Looking for technical implementation",1
+"Machine Learning with Experiment tracking","Hiring model training expert",1
+"Cloud engineer with Cost monitoring","Looking for technical architect",0
+"Data Engineer with Workflow automation","Hiring data pipeline developer",1
+"Backend developer with API versioning","Looking for simple API developer",0
+"Frontend developer with Mobile responsiveness","Hiring desktop-focused developer",0
+"Python developer with Debugging skills","Looking for Python developer with debugging",1
+"React developer with Error boundaries","Hiring basic component developer",0
+"DevOps engineer with Log management","Looking for infrastructure management",0
+"Mobile developer with User analytics","Looking for core feature developer",0
+"Full Stack developer with Mentoring","Looking for independent worker",0
+"Cybersecurity with Security policies","Looking for technical security",0
+"Machine Learning with Data visualization","Hiring model development",0
+"Cloud engineer with Resource tagging","Looking for technical implementation",0
+"Data Analyst with Data cleaning","Hiring data analysis expert",1
+"Backend developer with Bulk operations","Looking for single operation developer",0
+"Frontend developer with Code splitting","Hiring monolithic app developer",0
+"Python developer with Performance optimization","Looking for Python developer with performance",1
+"React developer with Lazy loading","Hiring eager loading developer",0
+"DevOps engineer with Capacity planning","Looking for current capacity manager",0
+"Mobile developer with Battery optimization","Looking for feature developer",0
+"Full Stack developer with Technical debt","Looking for greenfield developer",0
+"Cybersecurity with Security awareness","Looking for technical specialist",0
+"Machine Learning with Model interpretability","Hiring model accuracy expert",0
+"Cloud engineer with Service Level Agreements","Looking for technical operator",0
+"Data Engineer with Data lineage","Hiring pipeline builder",1
+"Backend developer with Graceful degradation","Looking for always-on developer",0
+"Frontend developer with Progressive enhancement","Hiring modern browser developer",0
+"Python developer with Memory management","Looking for Python developer with optimization",1
+"React developer with Concurrent features","Hiring traditional React developer",0
+"DevOps engineer with Incident management","Looking for preventive maintenance",0
+"Mobile developer with Accessibility features","Looking for standard app developer",0
+"Full Stack developer with Legacy systems","Looking for modern stack developer",0
+"Cybersecurity with Security certifications","Looking for practical experience",0
+"Machine Learning with Transfer learning","Hiring from-scratch trainer",0
+"Cloud engineer with Multi-region deployment","Looking for single-region developer",0
+"Data Analyst with Predictive modeling","Hiring descriptive analyst",0
+"Backend developer with Circuit breaker","Looking for direct call developer",0
+"Frontend developer with Dark mode","Hiring light mode developer",0
+"Python developer with Concurrency","Looking for synchronous Python developer",1
+"React developer with Server Components","Hiring client-side developer",0
+"DevOps engineer with Chaos engineering","Looking for stable systems",0
+"Mobile developer with Deep linking","Looking for standard navigation",0
+"Full Stack developer with Microfrontends","Looking for monolithic frontend",0
+"Cybersecurity with Red team exercises","Looking for blue team defender",0
+"Machine Learning with Unsupervised learning","Hiring supervised learning expert",0
+"Cloud engineer with Spot instances","Looking for reserved instances",0
+"Data Engineer with Stream processing","Hiring batch processing expert",1
+"Backend developer with Event sourcing","Looking for CRUD developer",0
+"Frontend developer with WebAssembly","Hiring JavaScript developer",0
+"Python developer with Meta-programming","Looking for standard Python developer",1
+"React developer with Design patterns","Hiring basic React developer",1
+"DevOps engineer with Git workflows","Looking for basic Git user",0
+"Mobile developer with Augmented reality","Looking for traditional app developer",0
+"Full Stack developer with System design","Looking for feature developer",0
+"Cybersecurity with Digital forensics","Looking for preventive security",0
+"Machine Learning with Time series","Hiring computer vision expert",0
+"Cloud engineer with Reserved instances","Looking for on-demand user",0
+"Data Analyst with Statistical significance","Hiring business insight analyst",0
+"Backend developer with CQRS pattern","Looking for simple CRUD developer",0
+"Frontend developer with Motion design","Hiring static UI developer",0
+"Python developer with Decorators","Looking for basic Python developer",1
+"React developer with Custom hooks","Hiring standard hook user",1
+"DevOps engineer with Infrastructure testing","Looking for manual testing",0
+"Mobile developer with Machine learning","Looking for traditional app developer",0
+"Full Stack developer with Architecture patterns","Looking for implementation developer",0
+"Cybersecurity with Security compliance","Looking for technical security",0
+"Machine Learning with Ensemble methods","Hiring single model expert",0
+"Cloud engineer with Cost allocation","Looking for technical architect",0
+"Data Engineer with Data validation","Hiring data pipeline developer",1
+"Backend developer with Background jobs","Looking for request-response developer",0
+"Frontend developer with Type safety","Hiring JavaScript developer",0
+"Python developer with Context managers","Looking for basic Python developer",1
+"React developer with Performance monitoring","Hiring development-focused developer",0
+"DevOps engineer with Security compliance","Looking for technical operations",0
+"Mobile developer with Offline synchronization","Looking for online-only app",0
+"Full Stack developer with Code standards","Looking for flexible developer",0
+"Cybersecurity with Threat modeling","Looking for implementation specialist",1
+"Machine Learning with Hyperparameter tuning","Hiring standard model training",1
+"Cloud engineer with Resource optimization","Looking for basic cloud user",0
+"Data Analyst with Data governance","Hiring technical analyst",0
+"Backend developer with API documentation","Looking for code-only developer",0
+"Frontend developer with Component testing","Hiring manual testing developer",0
+"Python developer with Package management","Looking for basic Python developer",1
+"React developer with Bundle analysis","Hiring feature developer",0
+"DevOps engineer with Cost forecasting","Looking for current cost management",0
+"Mobile developer with Camera integration","Looking for standard UI developer",0
+"Full Stack developer with Technical writing","Looking for code-focused developer",0
+"Cybersecurity with Security monitoring","Looking for implementation specialist",1
+"Machine Learning with Model serving","Hiring research scientist",0
+"Cloud engineer with Disaster recovery","Looking for high availability",0
+"Data Engineer with Data catalog","Hiring pipeline developer",1
+"Backend developer with Request validation","Looking for basic API developer",0
+"Frontend developer with SEO optimization","Hiring application developer",0
+"Python developer with Virtual environments","Looking for basic Python developer",1
+"React developer with Accessibility testing","Hiring visual developer",0
+"DevOps engineer with Performance benchmarking","Looking for operational stability",0
+"Mobile developer with Payment integration","Looking for free app developer",0
+"Full Stack developer with Project management","Looking for technical developer",0
+"Cybersecurity with Security assessment","Looking for daily operations",1
+"Machine Learning with Feature selection","Hiring model training expert",1
+"Cloud engineer with Load testing","Looking for development environment",0
+"Data Analyst with KPI tracking","Hiring data processing expert",0
+"Backend developer with Health checks","Looking for basic API developer",0
+"Frontend developer with Cross-browser testing","Hiring modern browser developer",0
+"Python developer with Code profiling","Looking for basic Python developer",1
+"React developer with State normalization","Hiring local state user",0
+"DevOps engineer with Security patches","Looking for feature development",0
+"Mobile developer with Social media integration","Looking for standalone app",0
+"Full Stack developer with Code documentation","Looking for self-documenting code",0
+"Cybersecurity with Penetration testing","Looking for security design",1
+"Machine Learning with Data augmentation","Hiring clean data specialist",0
+"Cloud engineer with Auto-recovery","Looking for manual recovery",0
+"Data Engineer with Data partitioning","Hiring basic ETL developer",1
+"Backend developer with Request throttling","Looking for unlimited API developer",0
+"Frontend developer with Performance metrics","Hiring feature developer",0
+"Python developer with Exception handling","Looking for basic Python developer",1
+"React developer with Prop types","Hiring JavaScript developer",0
+"DevOps engineer with Backup verification","Looking for backup creation",0
+"Mobile developer with Geolocation services","Looking for location-independent app",0
+"Full Stack developer with Code review","Looking for independent developer",0
+"Cybersecurity with Security tools","Looking for manual security",1
+"Machine Learning with Cross-validation","Hiring single split training",1
+"Cloud engineer with Cost alerts","Looking for monthly review",0
+"Data Analyst with Dashboard creation","Hiring data processing expert",1
+"Backend developer with Content negotiation","Looking for JSON API developer",0
+"Frontend developer with Asset optimization","Hiring feature developer",0
+"Python developer with Logging framework","Looking for basic Python developer",1
+"React developer with Error reporting","Hiring basic error handling",0
+"DevOps engineer with Certificate management","Looking for HTTP developer",0
+"Mobile developer with Push notification services","Looking for local notification",0
+"Full Stack developer with Agile ceremonies","Looking for independent worker",0
+"Cybersecurity with Security frameworks","Looking for practical implementation",1
+"Machine Learning with Model evaluation","Hiring model training expert",1
+"Cloud engineer with Resource monitoring","Looking for application development",0
+"Data Engineer with Data backup strategies","Hiring live data processor",0
+"Backend developer with API rate limiting","Looking for open API developer",0
+"Frontend developer with CSS methodologies","Hiring inline style developer",0
+"Python developer with Configuration management","Looking for hardcoded values",0
+"React developer with DevTools proficiency","Hiring basic React user",1
+"DevOps engineer with Infrastructure diagrams","Looking for command-line user",0
+"Mobile developer with App performance monitoring","Looking for feature developer",0
+"Full Stack developer with Team collaboration","Looking for solo developer",0
+"Cybersecurity with Security standards","Looking for custom security",1
+"Machine Learning with Feature importance","Hiring model accuracy expert",1
+"Cloud engineer with Cost optimization strategies","Looking for technical implementation",0
+"Data Analyst with Data interpretation","Hiring data collection expert",1
+"Backend developer with API authentication","Looking for open API developer",0
+"Frontend developer with Design collaboration","Looking for independent developer",0
+"Python developer with Dependency injection","Looking for direct instantiation",0
+"React developer with React ecosystem","Hiring core React developer",1
+"DevOps engineer with Change management","Looking for direct deployment",0
+"Mobile developer with User feedback integration","Looking for predefined features",0
+"Full Stack developer with Business understanding","Looking for technical developer",0
+"Cybersecurity with Vulnerability scanning","Looking for manual assessment",1
+"Machine Learning with Pipeline creation","Hiring individual component expert",1
+"Cloud engineer with Service discovery","Looking for static configuration",0
+"Data Engineer with Data transformation","Hiring data loading expert",1
+"Backend developer with Message serialization","Looking for JSON only",0
+"Frontend developer with UI consistency","Hiring individual component developer",0
+"Python developer with Metaclasses","Looking for basic Python developer",1
+"React developer with React patterns","Hiring basic component developer",1
+"DevOps engineer with Rollback strategies","Looking for forward-only deployment",0
+"Mobile developer with App store optimization","Looking for technical developer",0
+"Full Stack developer with Customer focus","Looking for technical specialist",0
+"Cybersecurity with Security incident response","Looking for preventive measures",1
+"Machine Learning with Model monitoring","Hiring model training expert",1
+"Cloud engineer with Resource allocation","Looking for fixed resources",0
+"Data Analyst with Business metrics","Hiring technical analyst",1
+"Backend developer with Data serialization","Looking for basic JSON developer",0
+"Frontend developer with Design implementation","Hiring functional developer",0
+"Python developer with Magic methods","Looking for basic Python developer",1
+"React developer with React best practices","Hiring working code developer",1
+"DevOps engineer with Deployment strategies","Looking for direct deployment",0
+"Mobile developer with Cross-device testing","Looking for single device developer",0
+"Full Stack developer with Product mindset","Looking for technical implementer",0
+"Cybersecurity with Security awareness training","Looking for technical specialist",0
+"Machine Learning with Experiment design","Hiring implementation specialist",1
+"Cloud engineer with Cost tracking","Looking for technical architecture",0
+"Data Engineer with Data quality monitoring","Hiring pipeline builder",1
+"Backend developer with API design patterns","Looking for working API developer",0
+"Frontend developer with User experience focus","Hiring functional developer",0
+"Python developer with Pythonic code","Looking for working Python developer",1
+"React developer with Modern React features","Hiring class component developer",0
+"DevOps engineer with Infrastructure security","Looking for functional infrastructure",0
+"Mobile developer with App security","Looking for feature developer",0
+"Full Stack developer with Technical leadership","Looking for individual contributor",0
+"Cybersecurity with Security controls","Looking for technical implementation",1
+"Machine Learning with Data pipeline integration","Hiring standalone model developer",1
+"Cloud engineer with Multi-cloud management","Looking for single cloud expert",0
+"Data Analyst with Data storytelling","Hiring technical analyst",1
+"Backend developer with API version management","Looking for single version",0
+"Frontend developer with Progressive web apps","Hiring traditional web developer",0
+"Python developer with Python ecosystem","Looking for basic Python skills",1
+"React developer with React community knowledge","Hiring isolated developer",1
+"DevOps engineer with Cloud cost management","Looking for technical operations",0
+"Mobile developer with App performance","Looking for feature completeness",0
+"Full Stack developer with System architecture","Looking for component developer",0
+"Cybersecurity with Risk management","Looking for technical security",1
+"Machine Learning with Production deployment","Hiring research environment",0
+"Cloud engineer with Cloud governance","Looking for technical implementation",0
+"Data Engineer with ETL optimization","Hiring basic ETL developer",1
+"Backend developer with Microservices communication","Looking for monolith developer",0
+"Frontend developer with Component architecture","Hiring page developer",0
+"Python developer with Python conventions","Looking for working code developer",1
+"React developer with React performance","Hiring functional component developer",1
+"DevOps engineer with Infrastructure as Code","Looking for manual configuration",0
+"Mobile developer with User interface design","Looking for backend mobile developer",0
+"Full Stack developer with Technical strategy","Looking for implementation focus",0
+"Cybersecurity with Security architecture","Looking for implementation specialist",1
+"Machine Learning with Model optimization","Hiring model training expert",1
+"Cloud engineer with Cloud networking","Looking for application development",0
+"Data Analyst with Data-driven decisions","Hiring data processor",1
+"Backend developer with Database design","Looking for existing database user",0
+"Frontend developer with Frontend architecture","Hiring component developer",0
+"Python developer with Python tools","Looking for basic Python developer",1
+"React developer with React ecosystem tools","Hiring core React developer",1
+"DevOps engineer with Cloud security","Looking for functional infrastructure",0
+"Mobile developer with Mobile security","Looking for feature developer",0
+"Full Stack developer with Technology evaluation","Looking for established technology user",0
+"Cybersecurity with Security implementation","Looking for security planning",1
+"Machine Learning with ML pipeline","Hiring individual model expert",1
+"Cloud engineer with Cloud services","Looking for traditional hosting",0
+"Data Engineer with Data architecture","Hiring ETL developer",1
+"Backend developer with System integration","Looking for standalone system",0
+"Frontend developer with Frontend build tools","Hiring basic HTML CSS developer",0
+"Python developer with Python libraries","Looking for standard library user",1
+"React developer with React development tools","Hiring basic React developer",1
+"DevOps engineer with Cloud management","Looking for server management",0
+"Mobile developer with Mobile platforms","Looking for web developer",0
+"Full Stack developer with Full stack understanding","Looking for specialized developer",0
+"Cybersecurity with Security operations","Looking for security design",1
+"Machine Learning with Data understanding","Hiring model technical expert",1
+"Cloud engineer with Cloud concepts","Looking for traditional IT",0
+"Data Analyst with Analytical thinking","Hiring data processor",1
+"Backend developer with Backend concepts","Looking for script writer",0
+"Frontend developer with Frontend concepts","Looking for HTML writer",0
+"Python developer with Programming fundamentals","Looking for Python syntax knowledge",1
+"React developer with Web fundamentals","Hiring React syntax knowledge",1
+"DevOps engineer with IT fundamentals","Looking for developer operations",0
+"Mobile developer with Mobile fundamentals","Looking for web developer",0
+"Full Stack developer with Development fundamentals","Looking for specialized knowledge",0
+"Cybersecurity with IT fundamentals","Looking for security specialist",1
+"Machine Learning with Math fundamentals","Hiring programming expert",1
+"Cloud engineer with Computing fundamentals","Looking for cloud user",0
+"Data Engineer with Engineering fundamentals","Hiring data processor",1

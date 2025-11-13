@@ -1,153 +1,179 @@
-import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-from sentence_transformers import SentenceTransformer
-import spacy
-import nltk
-from nltk.corpus import stopwords
+import math
 import re
-
-# NLTK data download
+import numpy as np
+from collections import Counter
 try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
+    from ml.predict_knn import predict_ats_score
+except:
+    from .ml.predict_knn import predict_ats_score
+
 
 
 class ATSScorer:
     def __init__(self):
-        self.bert_model = SentenceTransformer('all-MiniLM-L6-v2')
+        self.technical_skills = self.load_skills_from_file('data/skills_list.txt')
 
-        try:
-            self.nlp = spacy.load('en_core_web_sm')
-        except:
-            self.nlp = None
-
-        self.tfidf_vectorizer = TfidfVectorizer(
-            max_features=1000,
-            stop_words='english',
-            ngram_range=(1, 2)
-        )
-
-        self.ats_keywords = self.load_keywords('data/ats_keywords.txt')
-        self.technical_skills = self.load_keywords('data/skills_list.txt')
-        self.stop_words = set(stopwords.words('english'))
-
-    def load_keywords(self, filepath):
-        try:
-            with open(filepath, 'r', encoding='utf-8') as f:
-                keywords = [line.strip().lower() for line in f if line.strip()]
-            return set(keywords)
-        except:
-            return set()
+        # Minimal stop words only
+        self.stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
 
     def calculate_ats_score(self, resume_text, jd_text):
-        scores = {}
+        """
+        SIMPLIFIED VERSION - Cosine similarity ko fix karo
+        """
+        print("=== DEBUG START ===")
 
-        # 1. TF-IDF Similarity
-        scores['tfidf'] = self.tfidf_cosine_similarity(resume_text, jd_text)
+        # Step 1: Basic preprocessing (stop words mat hatao)
+        resume_clean = self.simple_clean(resume_text)
+        jd_clean = self.simple_clean(jd_text)
 
-        # 2. BERT Similarity
-        scores['bert'] = self.bert_semantic_similarity(resume_text, jd_text)
+        # Step 2: Use simple word-based cosine similarity
+        cosine_score = self.simple_cosine_similarity(resume_clean, jd_clean)
+        print(f"Simple Cosine Similarity: {cosine_score}")
 
-        # 3. Keyword Match
-        scores['keyword'] = self.keyword_match_percentage(resume_text, jd_text)
+        # Step 3: Keyword Match Score
+        keyword_score = self.keyword_match_score(resume_clean, jd_clean)
+        print(f"Keyword Match: {keyword_score}")
 
-        # 4. Skills Overlap
-        scores['skills'] = self.skills_overlap(resume_text, jd_text)
+        # Step 4: Skills Overlap
+        skills_score = self.skills_overlap(resume_clean, jd_clean)
+        print(f"Skills Overlap: {skills_score}")
 
-        # Final Score Calculation
+        # Final Score - Adjusted weights
         final_score = (
-                              scores['tfidf'] * 0.3 +
-                              scores['bert'] * 0.4 +
-                              scores['keyword'] * 0.2 +
-                              scores['skills'] * 0.1
+                              cosine_score * 0.4 +  # Simple Cosine Similarity (40%)
+                              keyword_score * 0.4 +  # Keyword Match (40%)
+                              skills_score * 0.2  # Skills Overlap (20%)
                       ) * 100
 
-        # Missing keywords
-        missing_keywords = self.get_missing_keywords(resume_text, jd_text)
+        suggestions = self.get_suggestions(resume_clean, jd_clean)
+        try:
+            print("Attempting to predict using KNN model...")
+            knn_score = predict_ats_score(resume_text, jd_text)
+            print(f"KNN Model Score: {knn_score}")
+            final_score = (final_score * 0.7) + (knn_score * 0.3)
+            print("✅ KNN block executed successfully!")
+        except Exception as e:
+            print("⚠️ KNN model not found or failed:", e)
+
+        print(f"Final Score: {final_score}")
+        print("=== DEBUG END ===")
 
         return {
             'final_score': round(final_score, 2),
             'breakdown': {
-                'TF-IDF Similarity': round(scores['tfidf'] * 100, 2),
-                'BERT Semantic Similarity': round(scores['bert'] * 100, 2),
-                'Keyword Match': round(scores['keyword'] * 100, 2),
-                'Skills Overlap': round(scores['skills'] * 100, 2)
+                'Cosine Similarity': round(cosine_score * 100, 2),
+                'Keyword Match': round(keyword_score * 100, 2),
+                'Skills Overlap': round(skills_score * 100, 2)
             },
-            'missing_keywords': missing_keywords
+            'missing_keywords': suggestions
         }
 
-    def tfidf_cosine_similarity(self, resume, jd):
-        try:
-            tfidf_matrix = self.tfidf_vectorizer.fit_transform([resume, jd])
-            similarity = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])
-            return float(similarity[0][0])
-        except:
+    def simple_clean(self, text):
+        """Minimal cleaning - technical words preserve karo"""
+        if not text:
+            return ""
+
+        text = text.lower()
+        # Remove special characters but keep technical symbols
+        text = re.sub(r'[^\w\s\.\-\+]', ' ', text)
+        text = re.sub(r'\s+', ' ', text)
+        return text.strip()
+
+    def simple_cosine_similarity(self, text1, text2):
+        """
+        Simple word frequency based cosine similarity
+        No TF-IDF - direct word counts use karo
+        """
+        if not text1 or not text2:
             return 0.0
 
-    def bert_semantic_similarity(self, resume, jd):
-        try:
-            embeddings = self.bert_model.encode([resume, jd])
-            similarity = cosine_similarity([embeddings[0]], [embeddings[1]])
-            return float(similarity[0][0])
-        except:
+        # Get words from both texts
+        words1 = text1.split()
+        words2 = text2.split()
+
+        if not words1 or not words2:
             return 0.0
 
-    def keyword_match_percentage(self, resume, jd):
-        jd_keywords = self.extract_important_keywords(jd)
-        if not jd_keywords:
+        # Create vocabulary from both texts
+        vocabulary = set(words1 + words2)
+
+        # Create frequency vectors
+        freq1 = Counter(words1)
+        freq2 = Counter(words2)
+
+        # Create vectors
+        vec1 = [freq1.get(word, 0) for word in vocabulary]
+        vec2 = [freq2.get(word, 0) for word in vocabulary]
+
+        # Convert to numpy arrays
+        v1 = np.array(vec1)
+        v2 = np.array(vec2)
+
+        # Calculate cosine similarity
+        dot_product = np.dot(v1, v2)
+        mag1 = np.linalg.norm(v1)
+        mag2 = np.linalg.norm(v2)
+
+        if mag1 == 0 or mag2 == 0:
             return 0.0
 
-        matched = 0
-        for keyword in jd_keywords:
-            if keyword in resume.lower():
-                matched += 1
+        similarity = dot_product / (mag1 * mag2)
+        return max(0, min(1, similarity))
 
-        return matched / len(jd_keywords)
+    def keyword_match_score(self, resume, jd):
+        """Improved keyword matching"""
+        # Extract meaningful words (3+ characters, not stop words)
+        jd_words = [word for word in jd.split() if len(word) >= 3 and word not in self.stop_words]
+        resume_words = set(resume.split())
+
+        if not jd_words:
+            return 0.0
+
+        matched = sum(1 for word in jd_words if word in resume_words)
+        return matched / len(jd_words)
+
+    def extract_skills_from_text(self, text):
+        """Skills extract with better matching"""
+        found_skills = []
+        for skill in self.technical_skills:
+            # Use word boundaries for exact matching
+            if re.search(r'\b' + re.escape(skill) + r'\b', text):
+                found_skills.append(skill)
+        return found_skills
 
     def skills_overlap(self, resume, jd):
-        resume_skills = [skill for skill in self.technical_skills if skill in resume.lower()]
-        jd_skills = [skill for skill in self.technical_skills if skill in jd.lower()]
+        """Skills overlap with better handling"""
+        jd_skills = self.extract_skills_from_text(jd)
+        resume_skills = self.extract_skills_from_text(resume)
+
+        print(f"JD Skills: {jd_skills}")
+        print(f"Resume Skills: {resume_skills}")
 
         if not jd_skills:
-            return 0.5
+            return 0.0
 
-        return len(resume_skills) / len(jd_skills)
+        common_skills = set(resume_skills) & set(jd_skills)
+        return len(common_skills) / len(jd_skills)
 
-    def extract_important_keywords(self, text):
-        important_keywords = set()
+    def get_suggestions(self, resume, jd):
+        """Better suggestions"""
+        jd_skills = self.extract_skills_from_text(jd)
+        resume_skills = self.extract_skills_from_text(resume)
 
-        # ATS keywords
-        for keyword in self.ats_keywords:
-            if keyword in text.lower():
-                important_keywords.add(keyword)
+        missing_skills = [skill for skill in jd_skills if skill not in resume_skills]
 
-        # Technical skills
-        for skill in self.technical_skills:
-            if skill in text.lower():
-                important_keywords.add(skill)
+        # Also get important keywords from JD that are missing
+        jd_words = [word for word in jd.split() if len(word) >= 4 and word not in self.stop_words]
+        resume_words = set(resume.split())
+        missing_keywords = [word for word in jd_words if word not in resume_words][:5]
 
-        # spaCy extraction
-        if self.nlp and len(text) > 10:
-            try:
-                doc = self.nlp(text[:1000])
-                for token in doc:
-                    if (token.pos_ in ['NOUN', 'PROPN'] and
-                            len(token.text) > 3 and
-                            token.text.lower() not in self.stop_words):
-                        important_keywords.add(token.text.lower())
-            except:
-                pass
+        return missing_skills + missing_keywords[:8]
 
-        return list(important_keywords)[:20]
-
-    def get_missing_keywords(self, resume_text, jd_text, top_n=8):
-        jd_keywords = self.extract_important_keywords(jd_text)
-        missing = []
-
-        for keyword in jd_keywords:
-            if keyword not in resume_text.lower():
-                missing.append(keyword)
-
-        return missing[:top_n]
+    def load_skills_from_file(self, filepath):
+        """Load skills from file"""
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                skills = [line.strip().lower() for line in f if line.strip()]
+            return set(skills)
+        except:
+            return set()

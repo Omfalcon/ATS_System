@@ -56,7 +56,7 @@ def hr_analyze():
         jd_text = clean_text(extract_text_from_file(jd_file))
 
         if not jd_text:
-            return jsonify({'success': False, 'error': 'JD text extract nahi hua'})
+            return jsonify({'success': False, 'error': 'text not extracted'})
 
         results = []
         for resume_file in resume_files:
@@ -87,4 +87,4 @@ if __name__ == '__main__':
     print("🚀 ATS System Started!")
     print("📍 User: http://localhost:5000")
     print("📍 HR: http://localhost:5000/hr")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)
