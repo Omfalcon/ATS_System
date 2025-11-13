@@ -1,0 +1,23 @@
+python
+java
+javascript
+sql
+html
+css
+react
+angular
+node.js
+mongodb
+mysql
+aws
+docker
+kubernetes
+machine learning
+deep learning
+tableau
+power bi
+excel
+word
+powerpoint
+linux
+git

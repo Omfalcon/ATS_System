@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATS Score Check</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .upload-box { border: 2px dashed #ccc; padding: 30px; text-align: center; margin: 20px 0; }
+        button { background: #007bff; color: white; padding: 12px 30px; border: none; cursor: pointer; font-size: 16px; }
+        .result { margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; }
+        .score { font-size: 24px; font-weight: bold; color: #28a745; }
+        .suggestion { background: #fff3cd; padding: 10px; margin: 5px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>📄 ATS Score Check</h1>
+
+    <form id="uploadForm">
+        <div class="upload-box">
+            <h3>Upload Your Resume (PDF/Word):</h3>
+            <input type="file" name="resume" accept=".pdf,.docx,.doc,.txt" required>
+        </div>
+
+        <div class="upload-box">
+            <h3>Upload Job Description (PDF/Word):</h3>
+            <input type="file" name="jd" accept=".pdf,.docx,.doc,.txt" required>
+        </div>
+
+        <br>
+        <button type="submit">Check ATS Score</button>
+    </form>
+
+    <div id="result" class="result" style="display:none;">
+        <h3>Results:</h3>
+        <p><span class="score" id="score"></span>/100</p>
+
+        <h4>Score Breakdown:</h4>
+        <div id="breakdown"></div>
+
+        <h4>Suggestions to Improve:</h4>
+        <div id="suggestions"></div>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').onsubmit = async function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            try {
+                let response = await fetch('/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                let data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('score').textContent = data.score;
+
+                    // Breakdown show karo
+                    let breakdownHtml = '';
+                    for(let key in data.breakdown) {
+                        breakdownHtml += `<p>${key}: ${data.breakdown[key]}%</p>`;
+                    }
+                    document.getElementById('breakdown').innerHTML = breakdownHtml;
+
+                    // Suggestions show karo
+                    let suggestionsHtml = '';
+                    data.suggestions.forEach(suggestion => {
+                        suggestionsHtml += `<div class="suggestion">➕ ${suggestion}</div>`;
+                    });
+                    document.getElementById('suggestions').innerHTML = suggestionsHtml;
+
+                    document.getElementById('result').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (error) {
+                alert('Error: ' + error);
+            }
+        };
+    </script>
+</body>
+</html>

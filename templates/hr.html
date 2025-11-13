@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATS - HR Dashboard</title>
+    <style>
+        body { font-family: Arial; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        .upload-box { border: 2px dashed #ccc; padding: 20px; margin: 20px 0; }
+        button { background: #28a745; color: white; padding: 12px 30px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>👥 HR Dashboard - Candidate Ranking</h1>
+
+    <form id="hrForm">
+        <div class="upload-box">
+            <h3>Job Description (PDF/Word):</h3>
+            <input type="file" name="jd" required>
+        </div>
+
+        <div class="upload-box">
+            <h3>Candidate Resumes (Multiple PDF/Word):</h3>
+            <input type="file" name="resumes" multiple required>
+        </div>
+
+        <br>
+        <button type="submit">Rank Candidates</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('hrForm').onsubmit = async function(e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+
+            try {
+                let response = await fetch('/hr/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                let data = await response.json();
+
+                if (data.success) {
+                    let html = `<h3>Ranked Candidates (${data.total_processed})</h3>
+                               <table>
+                                 <tr>
+                                   <th>Rank</th>
+                                   <th>Candidate</th>
+                                   <th>ATS Score</th>
+                                   <th>Suggestions</th>
+                                 </tr>`;
+
+                    data.results.forEach((candidate, index) => {
+                        let color = candidate.score >= 80 ? '#d4edda' : candidate.score >= 60 ? '#fff3cd' : '#f8d7da';
+                        html += `<tr style="background-color: ${color}">
+                                 <td>${index + 1}</td>
+                                 <td>${candidate.name}</td>
+                                 <td><strong>${candidate.score}/100</strong></td>
+                                 <td>${candidate.suggestions.join(', ')}</td>
+                               </tr>`;
+                    });
+
+                    html += '</table>';
+                    document.getElementById('results').innerHTML = html;
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch (error) {
+                alert('Error: ' + error);
+            }
+        };
+    </script>
+</body>
+</html>
